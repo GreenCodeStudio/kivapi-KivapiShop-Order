@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+    <vendor>KivapiShop</vendor>
+    <name>Order</name>
+    <description>
+        Base ecommerce cart and order package for KivapiShop.
+    </description>
+    <git>https://github.com/GreenCodeStudio/kivapi-KivapiShop-Order</git>
+    <version>1.0.0</version>
+</package>
