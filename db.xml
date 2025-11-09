@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <table>
+        <name>kshop_cart_item</name>
+        <column>
+            <name>cart_id</name>
+            <type>varchar(36)</type>
+            <null>NO</null>
+        </column>
+        <column>
+            <name>product_type</name>
+            <type>varchar(255)</type>
+            <null>NO</null>
+        </column>
+        <column>
+            <name>product_id</name>
+            <type>varchar(255)</type>
+            <null>NO</null>
+        </column>
+        <column>
+            <name>amount</name>
+            <type>float</type>
+            <null>NO</null>
+        </column>
+        <column>
+            <name>add_stamp</name>
+            <type>datetime</type>
+            <null>YES</null>
+        </column>
+        <index>
+            <type>PRIMARY</type>
+            <element>cart_id</element>
+            <element>product_type</element>
+            <element>product_id</element>
+        </index>
+    </table>
+</root>
