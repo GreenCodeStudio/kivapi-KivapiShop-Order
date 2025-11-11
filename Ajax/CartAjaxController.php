@@ -14,4 +14,9 @@ class CartAjaxController extends AjaxController{
         $cart=new Cart($_COOKIE['kshop_cartId']);
         $cart->addToCart($type, $id, $amount);
     }
+    public function updateDeliveryDetails($cartId, $deliveryDetails)
+    {
+        $cart=new Cart($cartId);
+        $cart->updateDeliveryDetails($deliveryDetails);
+    }
 }

@@ -1,0 +1,21 @@
+<section class="order">
+    <h2>Zamówienie</h2>
+    <form class="orderForm">
+        <input type="hidden" name="cartId" value=(deliveryDetails.id) />
+        <label>
+            <span>Forma dostawy</span>
+            <select>
+                <option>Odbiór osobisty</option>
+            </select>
+        </label>
+        <label>
+            <span>Imię</span>
+            <input type="text" name="firstName" value=(deliveryDetails.deliveryDetails.firstName)/>
+        </label>
+        <label>
+            <span>E-mail</span>
+            <input type="email" name="email" value=(deliveryDetails.deliveryDetails.email)/>
+        </label>
+        <button>Dalej</button>
+    </form>
+</section>

@@ -1,6 +1,6 @@
 <?php
 
-namespace KivapiShop\Order\Components\Cart;
+namespace KivapiShop\Order\Components\Order;
 
 use Core\ComponentManager\ComponentController;
 use Core\Exceptions\NotFoundException;
@@ -9,32 +9,30 @@ use KivapiShop\Order\Cart;
 
 class Controller extends ComponentController
 {
-    private mixed $id;
-    private mixed $version;
-    public array $cartItems;
-    public \Closure $formatCurrency;
-    public mixed $cartId;
-    public bool $isEmpty;
+
+
+    public string $cartId;
+    public object $deliveryDetails;
 
     public function __construct($params)
     {
         parent::__construct();
-        $this->formatCurrency = function ($amount) {
-            return number_format($amount / 100, 2, '.', '');
-        };
         if (empty($_COOKIE['kshop_cartId'])) {
-            $this->cartItems = [];
-        }else {
+            throw new NotFoundException();
+        } else {
             $cart = new Cart($_COOKIE['kshop_cartId']);
-            $this->cartId=$_COOKIE['kshop_cartId'];
-            $this->cartItems = $cart->getItems();
+            $this->cartId = $_COOKIE['kshop_cartId'];
+            $this->deliveryDetails = $cart->getDeliveryDetails();
+            if ($this->deliveryDetails->hasItems == 0) {
+                throw new NotFoundException();
+            }
         }
-        $this->isEmpty=empty($this->cartItems);
     }
 
     public static function DefinedParameters()
     {
         return [
+            'cart_id' => (object)['type' => 'string', 'canFromQuery' => true],
         ];
     }
 

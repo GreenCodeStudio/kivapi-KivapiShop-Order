@@ -1,0 +1,31 @@
+<section class="cart">
+    <h2>Koszyk</h2>
+
+    <:if condition=isEmpty >
+        <p>Koszyk jest pusty</p>
+    </:if><:else>
+    <table>
+        <thead>
+        <tr>
+            <th>Nazwa produktu</th>
+            <th>Cena jednostkowa</th>
+            <th>Ilość</th>
+            <th>Cena</th>
+        </tr>
+        </thead>
+        <:foreach collection=cartItems item=item >
+        <tr>
+            <td>{{item.name}}</td>
+            <td>
+                {{formatCurrency(item.price)}} {{item.price_currency}}
+            </td>
+            <td>{{item.amount}}</td>
+            <td>
+                {{formatCurrency(item.price*item.amount)}} {{item.price_currency}}
+            </td>
+        </tr>
+        </:foreach>
+    </table>
+    <a href="/order/":cartId >Przejdź do zamówienia</a>
+    </:else>
+</section>

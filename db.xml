@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
     <table>
+        <name>kshop_cart</name>
+        <column>
+            <name>id</name>
+            <type>varchar(36)</type>
+            <null>NO</null>
+        </column>
+        <column>
+            <name>delivery_details</name>
+            <type>json</type>
+            <null>YES</null>
+        </column>
+        <column>
+            <name>invoice_details</name>
+            <type>json</type>
+            <null>YES</null>
+        </column>
+        <column>
+            <name>created_stamp</name>
+            <type>datetime</type>
+            <null>YES</null>
+        </column>
+        <index>
+            <type>PRIMARY</type>
+            <element>id</element>
+        </index>
+    </table>
+    <table>
         <name>kshop_cart_item</name>
         <column>
             <name>cart_id</name>
@@ -32,6 +59,13 @@
             <element>cart_id</element>
             <element>product_type</element>
             <element>product_id</element>
+        </index>
+        <index>
+            <type>FOREIGN</type>
+            <element>cart_id</element>
+            <reference name="kshop_cart">
+                <element>id</element>
+            </reference>
         </index>
     </table>
 </root>
