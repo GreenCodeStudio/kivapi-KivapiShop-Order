@@ -1,0 +1,45 @@
+<section class="order">
+    <h2>Zamówienie</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Nazwa produktu</th>
+            <th>Cena jednostkowa</th>
+            <th>Ilość</th>
+            <th>Cena</th>
+        </tr>
+        </thead>
+        <:foreach collection= cartItems item= item>
+            <tr>
+                <td>{{item.name}}</td>
+                <td>
+                    {{formatCurrency(item.price)}} {{item.price_currency}}
+                </td>
+                <td>{{item.amount}}</td>
+                <td>
+                    {{formatCurrency(item.price*item.amount)}} {{item.price_currency}}
+                </td>
+            </tr>
+        </:foreach>
+    </table>
+    <div>
+        <span>Imię</span>
+        <strong>{{deliveryDetails.deliveryDetails.firstName}}</strong>
+    </div>
+    <div>
+        <span>Nazwisko</span>
+        <strong>{{deliveryDetails.deliveryDetails.lastName}}</strong>
+    </div>
+    <div>
+        <span>E-mail</span>
+        <strong>{{deliveryDetails.deliveryDetails.email}}</strong>
+    </div>
+    <div>
+        <span>Telefon</span>
+        <strong>{{deliveryDetails.deliveryDetails.tel}}</strong>
+    </div>
+    <button>Zamów</button>
+    <p>Zamówienie nie jest równoznaczne z zakupem. Po potwierdzeniu dostępności przez sprzedającego o kolejnych krokach
+        zostaniesz poinformowany mailowo.</p>
+
+</section>

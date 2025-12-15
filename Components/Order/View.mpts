@@ -13,8 +13,16 @@
             <input type="text" name="firstName" value=(deliveryDetails.deliveryDetails.firstName)/>
         </label>
         <label>
+            <span>Nazwisko</span>
+            <input type="text" name="lastName" value=(deliveryDetails.deliveryDetails.lastName)/>
+        </label>
+        <label>
             <span>E-mail</span>
             <input type="email" name="email" value=(deliveryDetails.deliveryDetails.email)/>
+        </label>
+        <label>
+            <span>Telefon</span>
+            <input type="tel" name="tel" value=(deliveryDetails.deliveryDetails.tel)/>
         </label>
         <button>Dalej</button>
     </form>
