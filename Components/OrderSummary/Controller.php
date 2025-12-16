@@ -15,6 +15,7 @@ class Controller extends ComponentController
     public object $deliveryDetails;
     public array $cartItems;
     public \Closure $formatCurrency;
+    public string $orderInfo;
 
     public function __construct($params)
     {
@@ -29,6 +30,7 @@ class Controller extends ComponentController
             $this->cartId = $_COOKIE['kshop_cartId'];
             $this->deliveryDetails = $cart->getDeliveryDetails();
             $this->cartItems = $cart->getItems();
+            $this->orderInfo = json_encode(['items' => $this->cartItems, 'deliveryDetails' => $this->deliveryDetails, 'sourceCartId' => $this->cartId]);
             if ($this->deliveryDetails->hasItems == 0) {
                 throw new NotFoundException();
             }
@@ -46,5 +48,4 @@ class Controller extends ComponentController
     {
         $this->loadMPTS(__DIR__.'/View.mpts');
     }
-
 }

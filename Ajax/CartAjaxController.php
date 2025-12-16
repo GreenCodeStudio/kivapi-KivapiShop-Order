@@ -5,6 +5,7 @@ namespace KivapiShop\Order\Ajax;
 use Core\Exceptions\NotFoundException;
 use Core\Panel\Infrastructure\AjaxController;
 use KivapiShop\Order\Cart;
+use KivapiShop\Order\Order;
 
 class CartAjaxController extends AjaxController{
     public function addToCart(string $type, string $id, float $amount){
@@ -19,4 +20,10 @@ class CartAjaxController extends AjaxController{
         $cart=new Cart($cartId);
         $cart->updateDeliveryDetails($deliveryDetails);
     }
+    public function doOrder($data)
+    {
+        $order=new Order();
+        $order->insert($data);
+    }
+
 }

@@ -38,7 +38,7 @@
         <span>Telefon</span>
         <strong>{{deliveryDetails.deliveryDetails.tel}}</strong>
     </div>
-    <button>Zamów</button>
+    <button data-data=orderInfo class="orderButton">Zamów</button>
     <p>Zamówienie nie jest równoznaczne z zakupem. Po potwierdzeniu dostępności przez sprzedającego o kolejnych krokach
         zostaniesz poinformowany mailowo.</p>
 
