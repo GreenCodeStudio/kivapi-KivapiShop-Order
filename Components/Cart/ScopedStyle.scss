@@ -1,0 +1,30 @@
+& {
+    max-width: var(--width);
+    margin: auto;
+}
+table{
+    margin-bottom: 2em;
+    tr{
+        &:hover, &:focus {
+            background: rgba(255,255,255,.1);
+            box-shadow: 0 0 1em rgba(0,0,0,.4);
+        }
+        td,th{
+            padding: 2px 1em;
+            text-align: left;
+        }
+    }
+}
+> a{
+    padding:1em;
+    display: block;
+    background: transparent;
+    border-radius: 1em;
+    overflow: hidden;
+    transition: all 300ms ease-out;
+    box-shadow: 0 0 1em -1em rgba(0,0,0,.4);
+    &:hover, &:focus {
+        background: rgba(255,255,255,.1);
+        box-shadow: 0 0 1em rgba(0,0,0,.4);
+    }
+}
