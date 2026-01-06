@@ -9,6 +9,11 @@ export default class {
             e.preventDefault();
 
             Ajax.KivapiShop.Order.Cart.doOrder(JSON.parse(e.target.dataset.data));
+            try{
+                fbq('track', 'Purchase', {currency: "USD", value: 30.00, data:JSON.parse(e.target.dataset.data)});
+            }catch (_){
+                //ignore
+            }
         }
     }
 
