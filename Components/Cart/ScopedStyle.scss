@@ -17,14 +17,18 @@ table{
 }
 > a{
     padding:1em;
-    display: block;
+    display: inline-block;
+    float: right;
+    margin-left: auto;
     background: transparent;
     border-radius: 1em;
     overflow: hidden;
     transition: all 300ms ease-out;
     box-shadow: 0 0 1em -1em rgba(0,0,0,.4);
+    background: rgba(255, 255, 255, .8);
+    color:var(--background);
     &:hover, &:focus {
-        background: rgba(255,255,255,.1);
+        background: rgba(255,255,255,.9);
         box-shadow: 0 0 1em rgba(0,0,0,.4);
     }
 }
