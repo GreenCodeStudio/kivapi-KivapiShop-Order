@@ -19,7 +19,8 @@ a, button{
     padding:1em;
     display: block;
     background: transparent;
-    border-radius: 1em;
+    border-radius: 2em;
+    corner-shape: squircle;
     overflow: hidden;
     transition: all 300ms ease-out;
     box-shadow: 0 0 1em -1em rgba(0,0,0,.4);
